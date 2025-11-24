@@ -37,13 +37,24 @@
                 MatchContext context = matchService.calcularMatch(data.usuario, vacante);
 
                 Map<String, Object> item = new HashMap<>();
-                item.put("vacante", vacante);
+                item.put("id", vacante.id);
+                item.put("titulo", vacante.titulo);
+                item.put("empresa", vacante.empresa);
+                item.put("descripcion", vacante.descripcion);
+                item.put("beneficios", vacante.beneficios);
+                item.put("horas_por_semana", vacante.horas_por_semana);
+                item.put("dias_laborales", vacante.dias_laborales);
+                item.put("turno", vacante.turno);
+                item.put("horario_flexible", vacante.horario_flexible);
+                item.put("ubicacion", vacante.ubicacion);
+                item.put("salario", vacante.salario);
+                item.put("area", vacante.area);
+                item.put("modalidad", vacante.modalidad);
                 item.put("porcentaje_match", context.score);
                 item.put("habilidades", context.habilidadesMatch);
                 item.put("idiomas", context.idiomasMatch);
                 item.put("area_match", context.areaMatch);
                 item.put("salario_match", context.salarioMatch);
-
                 item.put("match_competencia", vacante.match_competencia);
 
                 result.add(item);
