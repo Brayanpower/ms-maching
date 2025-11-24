@@ -1,4 +1,4 @@
-package com.ms_maching.ms_maching.Dto;
+package com.ms_maching.ms_maching.ChainofResponsibility.Dto;
 
 public class SalarioMatch {
     public Double vacante_salario;

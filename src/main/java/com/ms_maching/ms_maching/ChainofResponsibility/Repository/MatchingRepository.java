@@ -1,6 +1,6 @@
 package com.ms_maching.ms_maching.ChainofResponsibility.Repository;
 
-import com.ms_maching.ms_maching.Dto.MatchDataResponse;
+import com.ms_maching.ms_maching.ChainofResponsibility.Dto.MatchDataResponse;
 
 public interface MatchingRepository {
     /**

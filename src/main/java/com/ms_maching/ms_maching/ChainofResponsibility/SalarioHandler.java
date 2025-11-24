@@ -1,6 +1,6 @@
 package com.ms_maching.ms_maching.ChainofResponsibility;
 
-import com.ms_maching.ms_maching.Dto.SalarioMatch;
+import com.ms_maching.ms_maching.ChainofResponsibility.Dto.SalarioMatch;
 
 public class SalarioHandler implements MatchHandler {
 

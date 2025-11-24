@@ -1,4 +1,4 @@
-package com.ms_maching.ms_maching.Dto;
+package com.ms_maching.ms_maching.ChainofResponsibility.Dto;
 
 import java.util.List;
 

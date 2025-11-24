@@ -3,8 +3,8 @@
     import com.ms_maching.ms_maching.ChainofResponsibility.MatchContext;
     import com.ms_maching.ms_maching.ChainofResponsibility.Repository.MatchingRepository;
     import com.ms_maching.ms_maching.ChainofResponsibility.Service.MatchService;
-    import com.ms_maching.ms_maching.Dto.MatchDataResponse;
-    import com.ms_maching.ms_maching.Dto.VacanteDto;
+    import com.ms_maching.ms_maching.ChainofResponsibility.Dto.MatchDataResponse;
+    import com.ms_maching.ms_maching.ChainofResponsibility.Dto.VacanteDto;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.web.bind.annotation.GetMapping;
     import org.springframework.web.bind.annotation.RequestMapping;

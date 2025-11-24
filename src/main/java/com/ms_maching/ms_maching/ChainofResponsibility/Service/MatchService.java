@@ -1,8 +1,8 @@
 package com.ms_maching.ms_maching.ChainofResponsibility.Service;
 
 import com.ms_maching.ms_maching.ChainofResponsibility.*;
-import com.ms_maching.ms_maching.Dto.UsuarioDto;
-import com.ms_maching.ms_maching.Dto.VacanteDto;
+import com.ms_maching.ms_maching.ChainofResponsibility.Dto.UsuarioDto;
+import com.ms_maching.ms_maching.ChainofResponsibility.Dto.VacanteDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

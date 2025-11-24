@@ -3,14 +3,12 @@ package com.ms_maching.ms_maching.ChainofResponsibility.Repository;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ms_maching.ms_maching.Dto.MatchDataResponse;
+import com.ms_maching.ms_maching.ChainofResponsibility.Dto.MatchDataResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
-
-import java.util.Map;
 
 @Repository
 public class MatchingRepositoryImpl implements MatchingRepository {
