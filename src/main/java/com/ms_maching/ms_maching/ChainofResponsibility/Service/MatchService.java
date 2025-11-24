@@ -17,7 +17,7 @@ public class MatchService {
             new SalarioHandler()
     );
 
-    public double calcularMatch(UsuarioDto usuario, VacanteDto vacante) {
+    public MatchContext calcularMatch(UsuarioDto usuario, VacanteDto vacante) {
 
         MatchContext context = new MatchContext();
         context.usuario = usuario;
@@ -27,7 +27,8 @@ public class MatchService {
             handler.handle(context);
         }
 
-        return context.score;
+        return context; // ← YA NO DOUBLE
     }
 }
+
 

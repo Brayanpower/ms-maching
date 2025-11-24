@@ -1,5 +1,7 @@
 package com.ms_maching.ms_maching.ChainofResponsibility;
 
+import com.ms_maching.ms_maching.ChainofResponsibility.model.MatchDetalle;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -8,21 +10,29 @@ public class IdiomasHandler implements MatchHandler {
     @Override
     public void handle(MatchContext context) {
 
-        // Asegurar que NO sean null
         List<String> idiomasVacante =
                 context.vacante.idiomas != null ? context.vacante.idiomas : Collections.emptyList();
 
         List<String> idiomasUsuario =
                 context.usuario.idiomas != null ? context.usuario.idiomas : Collections.emptyList();
 
+        List<MatchDetalle> detalles = new ArrayList<>();
+
+        for (String idioma : idiomasVacante) {
+            MatchDetalle d = new MatchDetalle();
+            d.nombre = idioma;
+            d.status = idiomasUsuario.contains(idioma);
+            detalles.add(d);
+        }
+
+        // Guardar el detalle en el contexto
+        context.idiomasMatch = detalles;
+
         int total = idiomasVacante.size();
+        if (total == 0) return;
 
-        if (total == 0) return; // si la vacante no pide idiomas no suma
+        long match = detalles.stream().filter(d -> Boolean.TRUE.equals(d.status)).count();
 
-        long match = idiomasVacante.stream()
-                .filter(idiomasUsuario::contains)
-                .count();
-
-        context.score += (match / (double) total) * 30; // 30 = tu peso configurado
+        context.score += (match / (double) total) * 30;
     }
 }

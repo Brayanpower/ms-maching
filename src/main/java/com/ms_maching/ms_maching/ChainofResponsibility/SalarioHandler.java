@@ -1,22 +1,25 @@
 package com.ms_maching.ms_maching.ChainofResponsibility;
 
+import com.ms_maching.ms_maching.Dto.SalarioMatch;
+
 public class SalarioHandler implements MatchHandler {
 
     @Override
     public void handle(MatchContext context) {
 
-        // Evitar NullPointerException
-        if (context.vacante.salario == null || context.usuario.salario == null) {
-            return; // no suma puntos si no hay datos
-        }
+        if (context.vacante.salario == null || context.usuario.salario == null) return;
 
-        double salarioVacante = context.vacante.salario;
-        double salarioUsuario = context.usuario.salario;
+        double sv = context.vacante.salario;
+        double su = context.usuario.salario;
 
-        double diff = Math.abs(salarioVacante - salarioUsuario);
+        // Nueva regla: si la vacante paga más o igual, es match
+        boolean status = sv >= su;
 
-        // Comparación dentro del 20%
-        if (diff <= salarioUsuario * 0.20) {
+        // Guardar detalle del match salarial
+        context.salarioMatch = new SalarioMatch(sv, su, status);
+
+        // Si cumple → sumar 10 puntos
+        if (status) {
             context.score += 10;
         }
     }
